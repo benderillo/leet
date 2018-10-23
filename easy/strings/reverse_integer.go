@@ -11,7 +11,6 @@ func reverse(x int) int {
 
 	cutX := int32(x)
 	if x != int(cutX) {
-		fmt.Println("X is too large")
 		return 0
 	}
 
@@ -37,4 +36,5 @@ func reverse(x int) int {
 func main() {
 	fmt.Println(reverse(-123))
 	fmt.Println(reverse(1000000009))
+	fmt.Println(reverse(12345678))
 }
