@@ -1,9 +1,7 @@
-package main
+package linkedlists
 
 import (
 	"fmt"
-
-	"github.com/leet/easy/linkedlist"
 )
 
 // Challenge
@@ -30,7 +28,7 @@ import (
  *     Next *ListNode
  * }
  */
-func removeNthFromEnd(head *linkedlist.ListNode, n int) *linkedlist.ListNode {
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
 	hare := head
 	// Release a hare
@@ -69,10 +67,10 @@ func removeNthFromEnd(head *linkedlist.ListNode, n int) *linkedlist.ListNode {
 }
 
 func main() {
-	a := linkedlist.MakeListForward([]int{1, 2, 3, 4, 5, 6, 7, 8, 9})
+	a := MakeListForward([]int{1, 2, 3, 4, 5, 6, 7, 8, 9})
 	fmt.Println(removeNthFromEnd(a, 2).String())
-	b := linkedlist.MakeListForward([]int{1, 2, 3, 4, 5})
+	b := MakeListForward([]int{1, 2, 3, 4, 5})
 	fmt.Println(removeNthFromEnd(b, 1).String())
-	c := linkedlist.MakeListForward([]int{1})
+	c := MakeListForward([]int{1})
 	fmt.Println(removeNthFromEnd(c, 1).String())
 }
