@@ -66,7 +66,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	return head
 }
 
-func main() {
+func main1() {
 	a := MakeListForward([]int{1, 2, 3, 4, 5, 6, 7, 8, 9})
 	fmt.Println(removeNthFromEnd(a, 2).String())
 	b := MakeListForward([]int{1, 2, 3, 4, 5})
