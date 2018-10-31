@@ -16,7 +16,6 @@ import (
 
 // Solution:
 // This challenge is easily solved with two running pointers that are n elements apart.
-// Also known as turtle and a hare approach.
 // When the first pointer reaches the end of the list, the second pointer points to the Nth element from the end of the list
 
 // Time complexity O(n), space complexity O(1)
@@ -30,28 +29,28 @@ import (
  */
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
-	hare := head
-	// Release a hare
+	first := head
+	// Release a first
 	for i := 0; i < n; i++ {
-		if hare == nil {
+		if first == nil {
 			return nil
 		}
-		hare = hare.Next
+		first = first.Next
 	}
 
-	// Begin the race of tortoise and a hare
-	tortoise := head
-	prev := tortoise
-	for hare != nil {
-		hare = hare.Next
-		prev = tortoise
-		tortoise = tortoise.Next
+	// Begin the race of second and a first
+	second := head
+	prev := second
+	for first != nil {
+		first = first.Next
+		prev = second
+		second = second.Next
 	}
 
-	if tortoise.Next == nil {
+	if second.Next == nil {
 		// Reached the last element
-		if tortoise == head {
-			// if tortoise hasn't move anywhere, then it was one element list
+		if second == head {
+			// if second hasn't move anywhere, then it was one element list
 			return nil
 		}
 
@@ -59,9 +58,9 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 		return head
 	}
 
-	tmp := tortoise.Next
-	tortoise.Val = tmp.Val
-	tortoise.Next = tmp.Next
+	tmp := second.Next
+	second.Val = tmp.Val
+	second.Next = tmp.Next
 
 	return head
 }
