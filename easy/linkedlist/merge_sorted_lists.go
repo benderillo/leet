@@ -3,8 +3,6 @@ package linkedlist
 import (
 	"fmt"
 	"math"
-
-	"github.com/leet/easy/linkedlist"
 )
 
 /**
@@ -31,7 +29,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 
 		for l1Node != nil && l1Node.Val <= cmpVal {
-			newNode := new(linkedlist.ListNode)
+			newNode := new(ListNode)
 			newNode.Val = l1Node.Val
 
 			if first == nil {
@@ -50,7 +48,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 
 		for l2Node != nil && l2Node.Val <= cmpVal {
-			newNode := new(linkedlist.ListNode)
+			newNode := new(ListNode)
 			newNode.Val = l2Node.Val
 
 			if first == nil {
@@ -86,7 +84,7 @@ func mergeTwoListsRecursively(l1 *ListNode, l2 *ListNode) *ListNode {
 }
 
 func main4() {
-	a := linkedlist.MakeListForward([]int{1})
-	b := linkedlist.MakeListForward([]int{1})
+	a := MakeListForward([]int{1})
+	b := MakeListForward([]int{1})
 	fmt.Println(mergeTwoLists(a, b).String())
 }
